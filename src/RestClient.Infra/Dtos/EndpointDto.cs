@@ -14,5 +14,9 @@ namespace RestClient.Infra.Dtos
         public HttpMethod HttpMethod { get; set; }
         public DataModelDto InputModel { get; set; }
         public DataModelDto OutputModel { get; set; }
+
+        public List<EndpointHeaderArgumentDto> EndpointHeaderArguments { get; set; }
+        public List<EndpointQueryStringDto> EndpointQueryStrings { get; set; }
+        public List<History> Histories { get; set; }
     }
 }

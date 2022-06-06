@@ -11,5 +11,7 @@ namespace RestClient.Infra.Dtos
         public Guid Id { get; set; }
         public string Name { get; set; }
         public string Annotation { get; set; }
+
+        public List<DataModelColumnDto> DataModelColumns { get; set; }
     }
 }
