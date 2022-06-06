@@ -1,0 +1,95 @@
+Kan API aanmaken						bevat de url, en instellingen
+Kan Endpoint linken aan API				bevat de endpoint van de api, de input model en de output model
+Kan models aanmaken					bevat een gegevensset, of iets verplicht is, of iets uniek moet zijn etc.
+
+Een endpoint bevat een input model, waar gegevens worden ingevuld, en een export model, hoe de data wordt laten zien.
+Dit kan worden vastgesteld, echter kan dit op de website tijdelijk worden overschreven naar een andere model, json, of XML.
+
+paginas:
+	-send request pagina			bevat de pagina waar een endpoint wordt gekozen en de data ingevuld
+	-api crud					crud pagina's voor de API models. bevat ook lijst van de endpoints
+	-endpoint crud				crud pagina's voor de endpoints
+	-model crud					crud pagina's voor de models
+	-history pagina				kijken wat er de vorige keer gestuurd is
+	-settings					instellingen
+
+dit krijgt ook een mobiele app, met een custom orm (sqlite).
+het gebruikt hangfire om met jobs de requesten aan te sturen.
+alles wordt lokaal opgeslagen, en als de app opnieuw wordt geinstaleerd moet alles opnieuw.
+
+projects:
+
+	-projectname.orm
+	-projectname.lib
+	-projectname.xamarin
+	-projectname.website
+
+xamarin en website referen orm. orm refereert lib.
+
+
+Orm:
+
+met DI, een CustomDataProvider
+
+_cdp.T.GetById(guid id)
+_cdp.T.GetAll()
+_cdp.T.Create(T data) { }
+_cdp.T.Update(guid id, T data) { }
+_cdp.T.Delete(guid id)
+
+gebruikt directe sql statements om uit te voeren. 
+
+DbDesign:
+
+Table API:
+guid id
+string name
+string url
+
+Table Endpoint:
+guid id
+string name
+string endpoint
+DataModel inputModel
+DataModel outputModel
+
+Table EndpointUrlArguments:
+guid id
+guid endpointId
+string type
+string default
+bool required
+
+Table EndpointUrlHeaderArguments:
+guid id
+guid endpointid
+string key
+string value
+
+Table DataModel:
+guid id
+string name
+string desc
+
+Table DataModelColumns:
+guid id
+guid datamodelid
+string Name
+string normalizedName
+string Default
+DataType Type
+bool required
+bool unique
+
+Table DataType:
+guid id
+string name
+string annotation
+
+Table History:
+guid id
+datetime sentAt
+int statusCode
+string requestMessage
+string content
+endpoint endpointId
