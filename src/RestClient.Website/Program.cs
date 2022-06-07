@@ -1,10 +1,15 @@
-using RestClient.ORM;
+using Microsoft.EntityFrameworkCore;
+using RestClient.Orm;
+using RestClient.Website;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddDbContext<ApplicationDbContext>(options => 
+    options.UseSqlServer(builder.Configuration.GetConnectionString("default_db_connection")));
+  
 builder.Services.AddScoped<DataProvider>();
 
 var app = builder.Build();
