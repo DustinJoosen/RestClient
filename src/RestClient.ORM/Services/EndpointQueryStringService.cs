@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace RestClient.ORM.Services
 {
-    public class ApiService : BaseService<Api, ApiDto>
+    public class EndpointQueryStringService : BaseService<EndpointQueryString, EndpointQueryStringDto>
     {
-        public ApiService(ApiRepository repos, ApiMapper mapper) : base(repos, mapper)
+        public EndpointQueryStringService(EndpointQueryStringRepository repos, EndpointQueryStringMapper mapper) : base(repos, mapper)
         {
 
         }

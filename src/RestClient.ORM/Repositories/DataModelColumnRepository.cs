@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace RestClient.ORM.Repositories
 {
-    public class DataModelColumnRepository : BaseRepository<DataModel>
+    public class DataModelColumnRepository : BaseRepository<DataModelColumn>
     {
         public DataModelColumnRepository(ApplicationDbContext context) : base(context)
         {

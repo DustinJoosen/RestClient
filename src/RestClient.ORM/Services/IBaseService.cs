@@ -4,9 +4,9 @@
     {
         Task<List<TDto>> GetAll();
         Task<TDto> GetById(Guid id);
-        Task<TDto> Create(TDto model);
-        Task<TDto> Update(Guid id, TDto model);
-        Task<TDto> Delete(Guid id);
-        Task<TDto> Delete(TDto model);
+        Task<TDto> Create(TDto dto);
+        Task<TDto> Update(Guid id, TDto dto);
+        //Task<TDto> Delete(Guid id);
+        //Task<TDto> Delete(TDto model);
     }
 }

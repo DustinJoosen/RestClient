@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace RestClient.ORM.Services
 {
-    public class ApiService : BaseService<Api, ApiDto>
+    public class DataModelColumnService : BaseService<DataModelColumn, DataModelColumnDto>
     {
-        public ApiService(ApiRepository repos, ApiMapper mapper) : base(repos, mapper)
+        public DataModelColumnService(DataModelColumnRepository repos, DataModelColumnMapper mapper) : base(repos, mapper)
         {
 
         }

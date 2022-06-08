@@ -48,7 +48,7 @@ namespace RestClient.ORM.Repositories
                 throw new Exception("The guid of the model and the given guid do not match");
             }
 
-            _entry.Update(model);
+            _context.Entry(model).State = EntityState.Modified;
             await _context.SaveChangesAsync();
 
             return model;

@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace RestClient.ORM.Services
 {
-    public class ApiService : BaseService<Api, ApiDto>
+    public class HistoryService : BaseService<History, HistoryDto>
     {
-        public ApiService(ApiRepository repos, ApiMapper mapper) : base(repos, mapper)
+        public HistoryService(HistoryRepository repos, HistoryMapper mapper) : base(repos, mapper)
         {
 
         }
