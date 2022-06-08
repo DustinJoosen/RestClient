@@ -1,9 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-#nullable disable
-
-namespace RestClient.Website.Migrations
+namespace RestClient.Orm.Migrations
 {
     public partial class InitialMigration : Migration
     {

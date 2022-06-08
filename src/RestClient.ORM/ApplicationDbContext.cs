@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RestClient.Website
+namespace RestClient.Orm
 {
     public class ApplicationDbContext : DbContext
     {
