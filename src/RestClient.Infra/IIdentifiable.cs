@@ -11,4 +11,3 @@ namespace RestClient.Infra
         public Guid Id { get; set; }
     }
 }
-s
