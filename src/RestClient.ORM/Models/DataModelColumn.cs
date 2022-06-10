@@ -16,7 +16,7 @@ namespace RestClient.Orm.Models
         public Guid Id { get; set; }
 
         [Required]
-        public int DataModelId { get; set; }
+        public Guid DataModelId { get; set; }
         public DataModel DataModel { get; set; }
 
         [Required]
@@ -31,7 +31,7 @@ namespace RestClient.Orm.Models
         public string Default { get; set; }
 
         [Required]
-        public int DataTypeId { get; set; }
+        public Guid DataTypeId { get; set; }
         public DataType DataType { get; set; }
 
         public bool Required { get; set; } = true;

@@ -17,5 +17,20 @@ namespace RestClient.ORM.Mapping
         {
 
         }
+
+        public override DataModelColumn ToModel(DataModelColumnDto dto)
+        {
+            return new DataModelColumn
+            {
+                Id = dto.Id,
+                DataModelId = dto.DataModel.Id,
+                DataTypeId = dto.DataType.Id,
+                Name = dto.Name,
+                NormalizedName = dto.NormalizedName,
+                Default = dto.Default,
+                Required = dto.Required,
+                Unique = dto.Unique
+            };
+        }
     }
 }

@@ -17,5 +17,17 @@ namespace RestClient.ORM.Mapping
         {
 
         }
+
+        public override EndpointHeaderArgument ToModel(EndpointHeaderArgumentDto dto)
+        {
+            return new EndpointHeaderArgument
+            {
+                Id = dto.Id,
+                Name = dto.Name,
+                Value = dto.Value,
+                Required = dto.Required,
+                EndpointId = dto.Endpoint.Id
+            };
+        }
     }
 }

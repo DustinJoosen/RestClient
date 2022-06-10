@@ -15,5 +15,18 @@ namespace RestClient.ORM.Mapping
         {
 
         }
+
+        public override Endpoint ToModel(EndpointDto dto)
+        {
+            return new Endpoint
+            {
+                Id = dto.Id,
+                Name = dto.Name,
+                ApiId = dto.Api.Id,
+                HttpMethod = dto.HttpMethod,
+                InputModelId = dto.InputModel.Id,
+                OutputModelId = dto.OutputModel.Id
+            };
+        }
     }
 }

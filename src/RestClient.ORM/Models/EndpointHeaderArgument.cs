@@ -16,7 +16,7 @@ namespace RestClient.Orm.Models
         public Guid Id { get; set; }
 
         [Required]
-        public int EndpointId { get; set; }
+        public Guid EndpointId { get; set; }
         public Endpoint Endpoint { get; set; }
 
         [Required]

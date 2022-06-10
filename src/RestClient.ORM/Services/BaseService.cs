@@ -1,4 +1,6 @@
-﻿using RestClient.ORM.Mapping;
+﻿using Microsoft.EntityFrameworkCore;
+using RestClient.Infra;
+using RestClient.ORM.Mapping;
 using RestClient.ORM.Repositories;
 using System;
 using System.Collections.Generic;
@@ -8,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace RestClient.ORM.Services
 {
-    public abstract class BaseService<TModel, TDto> : IBaseService<TDto>
+    public abstract class BaseService<TModel, TDto> : IBaseService<TDto> where TDto : IIdentifiable
     {
         private IBaseRepository<TModel> _repos;
         private IBaseMapper<TModel, TDto> _mapper;
@@ -28,6 +30,8 @@ namespace RestClient.ORM.Services
         public virtual async Task<TDto> GetById(Guid id)
         {
             var model = await _repos.GetById(id);
+            _repos.Detach(model);
+
             return _mapper.ToDto(model);
         }
 

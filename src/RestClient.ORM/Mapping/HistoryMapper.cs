@@ -15,5 +15,18 @@ namespace RestClient.ORM.Mapping
         {
 
         }
+
+        public override History ToModel(HistoryDto dto)
+        {
+            return new History
+            {
+                Id = dto.Id,
+                Content = dto.Content,
+                EndpointId = dto.Endpoint.Id,
+                RequestMessage = dto.RequestMessage,
+                SentAt = dto.SentAt,
+                StatusCode = dto.StatusCode,
+            };
+        }
     }
 }

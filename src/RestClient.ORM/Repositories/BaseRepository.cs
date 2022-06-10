@@ -68,5 +68,15 @@ namespace RestClient.ORM.Repositories
             return model;
         }
 
+        public virtual void Detach(T model)
+        {
+            if (model == null)
+            {
+                return;
+            }
+
+            _context.Entry<T>(model).State = EntityState.Detached;
+        }
+
     }
 }

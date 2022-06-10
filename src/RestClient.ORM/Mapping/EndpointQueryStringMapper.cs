@@ -17,5 +17,17 @@ namespace RestClient.ORM.Mapping
         {
 
         }
+
+        public override EndpointQueryString ToModel(EndpointQueryStringDto dto)
+        {
+            return new EndpointQueryString
+            {
+                Id = dto.Id,
+                Default = dto.Default,
+                Key = dto.Key,
+                Required = dto.Required,
+                EndpointId = dto.Endpoint.Id
+            };
+        }
     }
 }

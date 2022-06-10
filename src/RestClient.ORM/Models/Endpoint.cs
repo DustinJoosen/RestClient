@@ -16,7 +16,7 @@ namespace RestClient.Orm.Models
         public Guid Id { get; set; }
 
         [Required]
-        public int ApiId { get; set; }
+        public Guid ApiId { get; set; }
         public Api Api { get; set; }
 
         [Required]
@@ -24,10 +24,10 @@ namespace RestClient.Orm.Models
         public string Name { get; set; }
         public Infra.Enums.HttpMethod HttpMethod { get; set; } = Infra.Enums.HttpMethod.GET;
 
-        public int InputModelId { get; set; }
+        public Guid InputModelId { get; set; }
         public DataModel InputModel { get; set; }
 
-        public int OutputModelId { get; set; }
+        public Guid OutputModelId { get; set; }
         public DataModel OutputModel { get; set; }
 
         [NotMapped]

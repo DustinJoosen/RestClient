@@ -14,5 +14,6 @@ namespace RestClient.ORM.Repositories
         Task<T> Update(Guid id, T model);
         Task<T> Delete(Guid id);
         Task<T> Delete(T model);
+        void Detach(T model);
     }
 }

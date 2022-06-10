@@ -21,6 +21,21 @@ namespace RestClient.ORM.Mapping
             
             CreateMap<DataModel, DataModelDto>();
             CreateMap<DataModelDto, DataModel>();
+
+            CreateMap<DataType, DataTypeDto>();
+            CreateMap<DataTypeDto, DataType>();
+
+            CreateMap<Endpoint, EndpointDto>();
+            CreateMap<EndpointDto, Endpoint>();
+
+            CreateMap<EndpointQueryString, EndpointQueryStringDto>();
+            CreateMap<EndpointQueryStringDto, EndpointQueryString>();
+
+            CreateMap<EndpointHeaderArgument, EndpointHeaderArgumentDto>();
+            CreateMap<EndpointHeaderArgumentDto, EndpointHeaderArgument>();
+
+            CreateMap<History, HistoryDto>();
+            CreateMap<HistoryDto, History>();
         }
     }
 }

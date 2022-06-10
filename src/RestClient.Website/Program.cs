@@ -48,6 +48,7 @@ builder.Services.AddScoped<DataModelMapper>();
 builder.Services.AddScoped<DataTypeMapper>();
 builder.Services.AddScoped<EndpointHeaderArgumentMapper>();
 builder.Services.AddScoped<EndpointQueryStringMapper>();
+builder.Services.AddScoped<EndpointMapper>();
 builder.Services.AddScoped<HistoryMapper>();
 
 builder.Services.AddAutoMapper(cfg => cfg.AddProfile<MappingProfile>());
