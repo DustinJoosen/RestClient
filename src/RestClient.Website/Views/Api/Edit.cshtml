@@ -1,0 +1,47 @@
+﻿@model ApiDto
+
+<div class="row">
+    <form asp-action="Update" method="post" class="col-sm-4">
+        <input type="hidden" asp-for="@Model.Id" />
+        <div class="card">
+            <div class="card-header">
+                <h3>Updating API</h3>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" asp-for="@Model.Name" required />
+                </div>
+                <div class="form-group">
+                    <label for="url">Base URL</label>
+                    <input type="url" class="form-control" id="url" asp-for="@Model.Url" required />
+                </div>
+            </div>
+            <div class="card-footer">
+                <a asp-action="Index" class="btn btn-secondary">Back</a>
+                <input type="submit" value="Update" class="btn btn-primary float-right" />
+            </div>
+        </div>
+    </form>
+    <div class="card col-sm-4">
+        <div class="card-header">
+            <h3>Endpoints</h3>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                @foreach (var endpoint in Model.Endpoints)
+                {
+                    <tr>
+                        <td>@endpoint.Name</td>
+                        <td>
+                            <a class="btn btn-danger" asp-action="RemoveEndpoint" asp-route-apiid="@Model.Id" asp-route-endpointid="@endpoint.Id">
+                                Delete endpoint
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+
+</div>

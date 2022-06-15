@@ -1,0 +1,38 @@
+﻿@model List<ApiDto>
+
+<h3>APIs</h3>
+
+<a asp-action="Create" class="btn btn-dark">Create</a>
+
+<table class="table table-bordered table-striped table-dark">
+    <thead class="thead-light">
+        <tr>
+            <th>Name</th>
+            <th>Url</th>
+            <th>Endpoints</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var api in Model)
+        {
+            <tr>
+                <td>@api.Name</td>
+                <td>@api.Url</td>
+                <td>
+                    <ul>
+                        @foreach(var endpoint in api.Endpoints)
+                        {
+                            <li>@endpoint.Name</li>
+                        }
+                    </ul>
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@api.Id">Edit</a>
+                    <a asp-action="Details" asp-route-id="@api.Id">Details</a>
+                    <a asp-action="Delete" asp-route-id="@api.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
